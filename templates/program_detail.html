@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<head>
+  <title>Program {{program.title}}</title>
+</head>
+<body  style="background:#FFC680">
+  <div align="center">
+   <h2 style="color:green;font-size:40px">{{ program.title }}</h2><br>
+   <hr>
+   <div style="font-size:15px">
+    <b><p>Written by: {{program.author}} </p>
+   <p>Date: {{ program.date }}</p>
+   <p style="color:#7C3030">Your maximum desired calorie intake (Target calories) is<b style="color:red"> {{ user.cal }} Kcal</b></p>
+   <p>You chose <b style="color:blue">{{program.foods}}</b> for your <b style="color:	#800020">{{ program.meal }}</b></p>
+   <p>You like to enjoy your meal with a <b style="color:#702963">{{program.drinks}} </b>drink.</p>
+   <p>You chose <b style="color:	#006B3C">{{program.snacks}}</b> as snacks.</p>
+   <p>You like to finish your meal with <b style="color:#C41E3A">{{program.dessert}} </b>as dessert.</p><br>
+   <p><b style="color:#960018">Note:</b> {{program.note}} </p>
+
+  <hr>
+  <p><a href="{% url 'program_edit' program.pk %}" class="btn btn-warning"><b> Edit This Program</a> |
+  <a href="{% url 'program_delete' program.pk %}" class="btn btn-danger"><b> Delete This Program</a></p>
+  </div>
+</div>
+  
+{% endblock content %}

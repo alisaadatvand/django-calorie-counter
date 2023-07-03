@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<head>
+  <title>Panel</title>
+</head>
+
+<body style="background:#F0E683;bfont-family: Orbitron;font-size: 1rem">
+ <div style="border: 1px solid black;border-radius: 500px">
+  <div align="center"><h2 style="color:green;font-size:30px">Panels: </h2></div><br>
+  {% for panel in object_list %}
+  <div align="center" class="program-entry">
+    <h2><a href="{% url 'panel_detail' panel.pk %}">{{ panel.Name }}</a></h2>
+  </div>
+  {% endfor %}
+ </div>
+  <br>
+  <p align="center"><a class="btn btn-warning ml-2" href="{% url 'panel_new' %}">New panel</a></p>
+</body>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+  <title>Log In</title>
+</head>
+<body style="background:#F0E683;font-family: Orbitron;font-size: 1rem">
+<div align="center" style=" border: 3px solid black;border-radius: 500px">
+<h2>Log In</h2>
+<br><b>
+<form method="post" >
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn btn-success ml-2" type="submit">Log In</button>
+</form>
+</div></b>
+<div align="center"><br>
+<p><b>You are not signed up?</p>
+<a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign Up</a>
+</div>
+
+<div align= "center">
+  <br>
+  <p> Designed by <a href="http://www.instagram.com/alisaadatvand">Ali Saadatvand</a>
+  </div>
+</body>
+
+{% endblock content %}

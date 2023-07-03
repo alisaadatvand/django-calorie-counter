@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<head>
+    <title>New Program</title>
+</head>
+<body  style="background:#EEDC82; font-family:time;font-weight:600">
+    <div align="center">
+    <h1 style="color:	#B22222">New program</h1><br>
+    <p><b>If your (food/drink/snacks/dessert) is not in database, you can add it:  </b><a href="{% url 'add' %}" class="btn btn-warning">Add</a><br><br>
+    <form action="" method="post">{% csrf_token %}
+       {{ form.as_p }}
+        </script>
+       <input type="submit" class="btn btn-success ml-2" value="Save">
+    </form>
+</div>
+</body>
+{% endblock content %}

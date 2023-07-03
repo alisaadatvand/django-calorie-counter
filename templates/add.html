@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<head>
+  <title>Add item</title>
+</head>
+<body style="background:#EFDFBB;font-family: Orbitron;font-size: 1rem">
+  <div align="center">
+   <p> <b>Please select which item you want to add: </p><br>
+   <a href="{% url 'food_list' %}" class="btn btn-warning"><b> Add Food</a>
+    <hr>
+   <a href="{% url 'drink_list' %}" class="btn btn-danger"><b> Add Drink</a>
+    <hr>
+   <a href="{% url 'snacks_list' %}" class="btn btn-warning"><b> Add Snacks</a>
+    <hr>
+   <a href="{% url 'dessert_list' %}" class="btn btn-danger"><b> Add Dessert</a>
+  </div>
+</body>
+  
+
+{% endblock content %}

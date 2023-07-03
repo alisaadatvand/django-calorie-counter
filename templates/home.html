@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<head>
+  <title>Home</title>
+</head>
+<body style="background:#eedf9e;font-family: Orbitron;font-size: 1rem">
+{% if user.is_authenticated %}
+  <p><b>  Hi {{ user.Name }} ,welcome to my website! 
+    <p>Target calories: {{user.cal}} Kcal<br><br>
+  <a class="btn btn-danger" href="{% url 'bmi' %}"> BMI CALCULATOR </a><br><br>
+{% endif %}
+<div style="border: 1px solid black;border-radius: 500px">
+  <div align="center"><h2 style="color:green;font-size:30px">Programs: </h2></div><br>
+  {% for program in object_list %}
+  <div align="center" class="program-entry">
+    <h2><a href="{% url 'program_detail' program.pk %}">{{ program.title }}</a></h2>
+    <div>Author: <b>{{program.author}}</b></div>
+    <h5>{{ program.date }}</h5>
+  </div>
+  {% endfor %}
+</div>
+  <br>
+  <p align="center"><a class="btn btn-primary ml-2" href="{% url 'program_new' %}">New program</a></p>
+</body>
+{% endblock content %}

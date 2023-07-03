@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+  <title>Sign Up</title>
+</head>
+<body style="background:#EFDECD;font-family: Orbitron;font-size: 1rem">
+  <h2 align="center">Sign Up</h2><br>
+  <b>
+  <form method="post">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <button class="btn btn-success ml-2" type="submit">Sign Up</button>
+  </form>
+  <p>You are signed up?</p>
+  <p><a href="{% url 'login' %}" class="btn btn-primary ml-2">Log In</a></p></b>
+</body>
+{% endblock content %}

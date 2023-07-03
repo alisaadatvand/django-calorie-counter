@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<head>
+    <title>New Dessert</title>
+</head>
+<body style="font-family: Orbitron;font-size: 1rem">
+    <div align="center">
+    <h1>New Dessert</h1><br><b>
+    <form action="" method="post">{% csrf_token %}
+       {{ form.as_p }}
+       <input class="btn btn-success ml-2" type="submit" value="Save">
+    </form>
+</div>
+<body>
+{% endblock content %}

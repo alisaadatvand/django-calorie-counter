@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<head>
+  <title>Panel</title>
+</head>
+<body  style="background:#F0E683; font-family:time;font-weight:600">
+   <div align="center"><h2 style="color:green;font-size:40px">Panel</h2></div><br>
+   <div align="center" style="font-size:20px;border: 1px solid black;border-radius: 500px">
+    
+   <p><b style="color:#7C3030">Name:</b> {{ panel.Name }} </p>
+   <p><b style="color:#7C3030">Target calories:</b> {{ user.cal }} </p>
+   <p><b style="color:#7C3030">Age:</b> {{ panel.age }} years old </p>
+   <p><b style="color:#7C3030">Weight:</b> {{ panel.weight }} Kg </p>
+   <p><b style="color:#7C3030">Height:</b> {{ panel.height }} m </p>
+   <p style="font-size:15px">Made on {{ panel.date }}  </p>
+  </div>
+</body>
+  
+ <br> <p align="center"><a href="{% url 'panel_edit' panel.pk %}" class="btn btn-warning"><b> Edit panel</a> |
+  <a class="btn btn-danger" href="{% url 'bmi' %}"> BMI CALCULATOR </a> 
+{% endblock content %}

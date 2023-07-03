@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    <title>
+        Drink List
+    </title>
+</head>
+    <div class="container mt-5 w-100" >
+        <div class="card shadow" >
+            <div class="card-body" >
+                <h3 class="text-center">Drink List</h3>
+                <a href="{% url 'drink_new' %}" class="w-100 mt-3 btn btn-success"><i class="bi bi-plus-square"></i> Add new Drink</a>
+                <a href="{% url 'program_new' %}" class="w-100 mt-3 btn btn-primary ml-2"><i class="bi bi-plus-square"></i> Back to new program</a>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">calories</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for drink in object_list %}
+                            <tr>
+                                <td>{{ drink.name }}</td>
+                                <td>{{ drink.cal }}</td>
+                                <td>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <a href="{% url 'drink_delete' drink.pk %}" class="btn btn-danger"><i class="bi bi-trash">Delete</i></a>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <a href="{% url 'drink_edit' drink.pk %}" class="btn btn-warning"><i class="bi bi-trash">Edit</i></a>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

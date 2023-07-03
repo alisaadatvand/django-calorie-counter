@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<head>
+    <title>Edit Dessert</title>
+</head>
+<body  style=" font-family:time;font-weight:600">
+    <div align="center">
+    <h1>Edit Dessert</h1><br>
+    <form action="" method="post">{% csrf_token %}
+       {{ form.as_p }}
+    <input type="submit" class="btn btn-success ml-2" value="Update">
+</form>
+</div>
+</body>
+{% endblock content %}

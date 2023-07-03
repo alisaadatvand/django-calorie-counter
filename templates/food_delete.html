@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+  <title>Delete Food</title>
+</head>
+<body  style=" font-family:time;font-weight:600">
+    <h1>Delete Food</h1><br>
+    <form action="" method="post">{% csrf_token %}
+      <p><b>Are you sure you want to delete "{{ foods.name }}"?</p>
+      <input type="submit" class="btn btn-success ml-2" value="Confirm">
+    </form>
+  </body>
+{% endblock content %}
